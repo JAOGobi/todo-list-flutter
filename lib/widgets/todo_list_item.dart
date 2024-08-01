@@ -40,19 +40,13 @@ class TodoListItem extends StatelessWidget {
         ),
         endActionPane: ActionPane(
           motion: const DrawerMotion(),
-          extentRatio: 0.60,
+          extentRatio: 0.30,
           children: [
             SlidableAction(
               backgroundColor: Colors.red,
               icon: Icons.delete,
               onPressed: (context) {},
               label: 'deletar',
-            ),
-            SlidableAction(
-              backgroundColor: Colors.blue,
-              icon: Icons.edit,
-              onPressed: (context) {},
-              label: 'editar',
             ),
           ],
         ),
