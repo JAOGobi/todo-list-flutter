@@ -18,6 +18,20 @@ class TodoListItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: Slidable(
+        endActionPane: ActionPane(
+          motion: DrawerMotion(),
+          extentRatio: 0.30,
+          children: [
+            SlidableAction(
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              onPressed: (context) {
+                onDelete(todo);
+              },
+              label: 'deletar',
+            ),
+          ],
+        ),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
@@ -42,20 +56,6 @@ class TodoListItem extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        endActionPane: ActionPane(
-          motion: const DrawerMotion(),
-          extentRatio: 0.30,
-          children: [
-            SlidableAction(
-              backgroundColor: Colors.red,
-              icon: Icons.delete,
-              onPressed: (context) {
-                onDelete(todo);
-              },
-              label: 'deletar',
-            ),
-          ],
         ),
       ),
     );
